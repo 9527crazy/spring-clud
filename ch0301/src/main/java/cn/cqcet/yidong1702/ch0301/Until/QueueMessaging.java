@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component;
 import javax.jms.Queue;
 
 /**
+ *   activemq:
+ *     broker-url: tcp://loaclhost:61616
  * FileName: QueueMessaging
  * Author:   刘帅
  * Date:     2019-9-18 17:45
