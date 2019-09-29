@@ -1,5 +1,6 @@
 package cn.cqcet.yidong1702.ch0501;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.ribbon.proxy.annotation.Hystrix;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,8 +20,7 @@ public class UserController {
     private RestTemplate restTemplate;
 
     @GetMapping("findOrdersByUser/{id}")
-    @Hystrix(fallbackHandler = )
-    @Hy
+    @HystrixCommand(fallbackMethod = "fallbackInfo")
     public String findOrdersByUser(@PathVariable String id){
         return restTemplate.getForObject("http://microservice-euereka-order/order/" + id, String.class);
     }
