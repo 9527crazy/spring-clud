@@ -9,6 +9,3 @@ eureka:
 spring:
   application:
     name: microservice-eureka-user-hystrix
-hystrix:
-  metrics:
-    enabled: true
